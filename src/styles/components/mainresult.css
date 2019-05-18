@@ -1,0 +1,20 @@
+.mainartist {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.mainartist > p {
+  color: white;
+  margin: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.mainartist__img {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+}
+
+/*# sourceMappingURL=mainresult.css.map */

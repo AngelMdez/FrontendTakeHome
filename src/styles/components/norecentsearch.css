@@ -1,0 +1,17 @@
+.nosearch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 2;
+}
+.nosearch__title {
+  margin: 15px;
+  color: white;
+}
+.nosearch__subtitle {
+  margin: 15px;
+  color: white;
+}
+
+/*# sourceMappingURL=norecentsearch.css.map */

@@ -1,0 +1,13 @@
+.app-layout {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-flow: column;
+  flex-grow: 1;
+  height: 100vh;
+  padding: 25px;
+  background: linear-gradient(180deg, rgba(51, 51, 51, 0.85), rgba(28, 28, 28, 0.95)), url(../../assets/spotifywallpaper.jpg) no-repeat center center fixed;
+}
+
+/*# sourceMappingURL=layout.css.map */

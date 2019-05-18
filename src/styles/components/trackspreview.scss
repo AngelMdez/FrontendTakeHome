@@ -1,0 +1,63 @@
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & > h3{
+    color: white;
+    font-weight: bold;
+  }
+
+  & > hr{
+    width: 100%;
+    margin: 10px;
+    opacity: .25;
+  }
+}
+
+.trackspreview{
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: repeat(2, auto);
+  color: white;
+  margin: 0 50px;
+
+  &-entry{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(2, 100px);
+
+    &__img{
+      height: 100px;
+      width: 100px;
+      grid-column: 1 ;
+      grid-row: 2 ;
+    }
+
+    &-info{
+      grid-column: 2 ;
+      grid-row: 2 ;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+
+      &__title{
+        padding: 10px;
+        overflow: hidden;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+        width: 100px;
+      }
+
+      &__artist{
+        width: 100px;
+        padding: 10px;
+        overflow: hidden;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+      }
+    }
+  }
+}
