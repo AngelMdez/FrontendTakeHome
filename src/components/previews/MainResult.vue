@@ -1,8 +1,7 @@
 <template>
-  <div class="mainartist" v-if="artists" >
-    <p>Most popular artist</p>
-    <img class="mainartist__img" :src="artists.items[0].images[0].url" />
-    <p class="mainartist__name">{{artists.items[0].name}}</p>
+  <div v-if="artists">
+    <artist :url="artists.items[0].images[0].url"
+            :name="artists.items[0].name"/>
   </div>
 </template>
 
@@ -11,9 +10,11 @@
 import {
   mapState
 } from 'vuex'
+import Artist from '../Artist'
 
 export default {
   name: 'MainResult',
+  components: {Artist},
   computed: {
     ...mapState('artists', [
       'artists'
@@ -24,4 +25,5 @@ export default {
 
 <style scoped lang="sass">
   @import "../../styles/components/mainresult.scss"
+  @import "../../styles/components/trackspreview"
 </style>

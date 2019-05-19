@@ -1,7 +1,9 @@
 <template>
   <div class="app-layout">
     <searchbox/>
-    <router-view></router-view>
+    <div class="app-layout-scroll">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 

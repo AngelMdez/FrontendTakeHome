@@ -2,7 +2,7 @@ import axios from 'axios'
 import auth from '../../api/auth'
 
 const baserequest = axios.create({
-  baseURL: 'https://api.spotify.com/v1/search'
+  baseURL: 'https://api.spotify.com/v1/search?market' + navigator.language
 })
 
 baserequest.interceptors.request.use(async config => {

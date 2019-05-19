@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import SearchResults from '@/views/SearchResults'
-import MainLayout from '@/components/layouts/MainLayout'
+import NoRecentSearch from '@/components/NoRecentSearch'
+import Tracks from '@/views/Tracks'
 
 Vue.use(Router)
 
@@ -10,12 +11,17 @@ export default new Router({
     {
       path: '/',
       name: 'main',
-      component: MainLayout
+      component: NoRecentSearch
     },
     {
       path: 'search/:query',
       name: 'search',
       component: SearchResults
+    },
+    {
+      path: '/list/tracks',
+      name: 'tracks',
+      component: Tracks
     }
   ]
 })

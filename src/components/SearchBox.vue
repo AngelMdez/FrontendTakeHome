@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="search">
+  <div class="search">
+    <div class="search-inner">
       <i class="material-icons md-24 ">
         search
       </i>
@@ -18,15 +18,9 @@ import {
   mapActions
 } from 'vuex'
 
-import mainresult from './previews/MainResult'
-
+var timeout = null
 export default {
   name: 'searchbox',
-
-  components: {
-    mainresult
-  },
-
   methods: {
     ...mapActions({
       getArtists: 'artists/getArtists',
@@ -35,15 +29,22 @@ export default {
     }),
 
     onKeyUp (e) {
+      clearTimeout(timeout)
+
       const {
         value
       } = e.target
-      if (value !== '') {
-        this.$router.replace({name: 'search', params: {query: value}})
-        this.getArtists(value)
-        this.getTracks(value)
-        this.getAlbums(value)
-      }
+
+      timeout = setTimeout(function () {
+        if (value !== '') {
+          // this.store(value)
+          this.getArtists(value)
+          this.getTracks(value)
+          this.getAlbums(value)
+          localStorage.setItem('input', value)
+          this.$router.replace({name: 'search', params: {query: value}})
+        }
+      }.bind(this), 250)
     }
   }
 }

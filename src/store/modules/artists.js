@@ -16,7 +16,7 @@ const mutations = {
 
   REQUEST_SET_ARTISTS (state, data) {
     state.artists = data.artists
-    // console.log(state.artists)
+    console.log(state.artists)
   }
 }
 

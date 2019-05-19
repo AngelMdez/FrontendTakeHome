@@ -5,6 +5,10 @@
   justify-content: center;
   flex-grow: 2;
 }
+.nosearch__icon {
+  height: 150px;
+  filter: brightness(0) invert(1);
+}
 .nosearch__title {
   margin: 15px;
   color: white;

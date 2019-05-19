@@ -1,0 +1,43 @@
+.tablewrapper{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table {
+  width: 75%;
+
+  & > h1{
+    color: white;
+    margin: 20px 0;
+    opacity: .7;
+
+    & > strong {
+      opacity: 1;
+    }
+  }
+
+  &-entry {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr 1fr 1fr;
+    grid-gap: 10px;
+
+    &--title{
+      text-transform: uppercase;
+      opacity: .65;
+      letter-spacing: 2px;
+    }
+
+    & > p {
+      color: white;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+hr{
+  width: 100%;
+  margin: 10px 0;
+  opacity: .25;
+}

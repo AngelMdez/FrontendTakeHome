@@ -1,8 +1,11 @@
 <template>
-  <div class="wrapper">
-    <h3>Tracks</h3>
+  <div class="wrapper"  v-if="tracks[0]">
+    <div class="wrapper-title">
+      <h3>Tracks</h3>
+      <p v-on:click="goTo()">Show more...</p>
+    </div>
     <hr>
-    <div class="trackspreview" v-if="tracks">
+    <div class="trackspreview" >
       <div class="trackspreview-entry"  v-for="(item, index) in tracks"
            :key="index">
         <img class="trackspreview-entry__img" :src="item.album.images[0].url" :alt="item.name"/>
@@ -23,6 +26,11 @@ export default {
     tracks: {
       type: Array,
       required: true
+    }
+  },
+  methods: {
+    goTo () {
+      this.$router.replace({name: 'tracks'})
     }
   }
 }

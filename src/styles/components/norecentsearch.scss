@@ -5,6 +5,10 @@
   justify-content: center;
   flex-grow: 2;
 
+  &__icon{
+    height: 150px;
+    filter: brightness(0) invert(1);
+  }
   &__title{
     margin: 15px;
     color: white;

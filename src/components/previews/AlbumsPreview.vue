@@ -1,8 +1,11 @@
-<template>
-  <div class="wrapper">
-    <h3>Albums</h3>
+<template >
+  <div class="wrapper"  v-if="albums[0]">
+    <div class="wrapper-title">
+      <h3>Albums</h3>
+      <p>Show more...</p>
+    </div>
     <hr>
-    <div class="trackspreview" v-if="albums">
+    <div class="trackspreview">
       <div class="trackspreview-entry"  v-for="(item, index) in albums"
            :key="index">
         <img class="trackspreview-entry__img" :src="item.images[0].url" :alt="item.name"/>
