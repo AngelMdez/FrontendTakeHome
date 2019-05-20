@@ -6,6 +6,7 @@
 
 .table {
   width: 75%;
+  overflow-y: scroll;
 
   & > h1{
     color: white;
@@ -36,8 +37,3 @@
   }
 }
 
-hr{
-  width: 100%;
-  margin: 10px 0;
-  opacity: .25;
-}

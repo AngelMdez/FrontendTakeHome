@@ -1,0 +1,25 @@
+.relatedlist {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+.relatedlist-entry {
+  width: 100%;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.relatedlist-entry__img {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+.relatedlist-entry__name {
+  color: white;
+  margin: 0 25px;
+}
+
+/*# sourceMappingURL=relatedartists.css.map */

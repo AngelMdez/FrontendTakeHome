@@ -6,6 +6,7 @@
 
 .table {
   width: 75%;
+  overflow-y: scroll;
 }
 .table > h1 {
   color: white;
@@ -29,12 +30,6 @@
   color: white;
   font-weight: 500;
   letter-spacing: 1px;
-}
-
-hr {
-  width: 100%;
-  margin: 10px 0;
-  opacity: 0.25;
 }
 
 /*# sourceMappingURL=trackentry.css.map */

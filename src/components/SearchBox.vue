@@ -5,22 +5,37 @@
         search
       </i>
       <input
-        @keyup="onKeyUp"
+        class="search-inner__input"
+        @keydown="onKeyUp"
         type="search"
-        placeholder="Search"
-         id="inpt_search"/>
+        placeholder="What are you looking for?"/>
+      <input
+        class="search-inner__input--suggestion"
+        type="search"
+        v-bind:value="getSuggestion()"/>
     </div>
   </div>
 </template>
 
 <script>
 import {
-  mapActions
+  mapActions,
+  mapState
 } from 'vuex'
+
+var vars = {
+  index: 0,
+  value: ''
+}
 
 var timeout = null
 export default {
   name: 'searchbox',
+  computed: {
+    ...mapState('artists', [
+      'artists'
+    ])
+  },
   methods: {
     ...mapActions({
       getArtists: 'artists/getArtists',
@@ -28,6 +43,12 @@ export default {
       getAlbums: 'albums/getAlbums'
     }),
 
+    capitalizeFirstLetter (string) {
+      return string.charAt(0).toUpperCase() + string.slice(1)
+    },
+    getSuggestion () {
+      return this.artists ? this.artists.items[0].name.toUpperCase() : ' '
+    },
     onKeyUp (e) {
       clearTimeout(timeout)
 
@@ -35,6 +56,8 @@ export default {
         value
       } = e.target
 
+      vars.index = value.length
+      vars.value = value
       timeout = setTimeout(function () {
         if (value !== '') {
           // this.store(value)

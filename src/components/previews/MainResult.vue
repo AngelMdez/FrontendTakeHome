@@ -1,6 +1,8 @@
 <template>
-  <div v-if="artists">
-    <artist :url="artists.items[0].images[0].url"
+  <div v-if="artists" >
+    <artist
+      :id="artists.items[0].id"
+      :url="artists.items[0].images[0].url"
             :name="artists.items[0].name"/>
   </div>
 </template>
@@ -19,6 +21,12 @@ export default {
     ...mapState('artists', [
       'artists'
     ])
+  },
+  methods: {
+    /* goTo (id) {
+      this.getArtists(id)
+      this.$router.replace({name: 'artistinfo', params: {query: id}})
+    } */
   }
 }
 </script>

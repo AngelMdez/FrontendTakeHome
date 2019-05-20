@@ -6,9 +6,9 @@
   justify-content: center;
 
   &-inner{
-    background: white;
+    background: transparent;
     font-size: 1.1rem;
-    color: #2b303b;
+    color: black;
     position: relative;
     height: 50px;
     width: 500px;
@@ -20,12 +20,33 @@
     transition: all 200ms ease;
     cursor: text;
     align-self: flex-start;
-  }
 
+
+    &__input{
+
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 3;
+      font-weight: bold;
+      letter-spacing: 2px;
+
+      &--suggestion{
+        position: absolute;
+        background: white;
+        left: 0;
+        top: 0;
+        color: gray;
+        letter-spacing: 2px;
+      }
+    }
+
+  }
 }
 
 i{
   position: absolute;
+  z-index: 3;
   top: 10px;
   left: 10px;
 }
@@ -41,4 +62,5 @@ input {
   color: inherit;
   background: transparent;
   outline-width: 0px;
+  text-transform: uppercase;
 }

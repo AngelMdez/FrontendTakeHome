@@ -6,6 +6,14 @@
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+}
+
 .material-icons.md-18 {
   font-size: 18px;
 }
@@ -24,6 +32,12 @@
 
 .material-icons.md-light {
   color: white;
+}
+
+hr {
+  width: 100%;
+  margin: 10px 0;
+  opacity: 0.25;
 }
 
 /*# sourceMappingURL=global.css.map */
