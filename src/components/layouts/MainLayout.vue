@@ -1,6 +1,8 @@
 <template>
   <div class="app-layout">
-    <searchbox/>
+    <div class="app-layout__header">
+      <searchbox/>
+    </div>
     <div class="app-layout-scroll">
       <router-view></router-view>
     </div>
@@ -21,5 +23,6 @@ export default {
 </script>
 
 <style scoped lang="sass">
+  @import "../../styles/global.scss"
   @import "../../styles/basics/layout.scss"
 </style>

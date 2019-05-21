@@ -1,0 +1,43 @@
+
+
+.notfound{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__message{
+    color: white;
+    font-size: 25px;
+  }
+  &-recommendations{
+    margin: 50px 0;
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: repeat(5, auto);
+    color: white;
+  }
+}
+
+
+.playlist{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__img{
+    width: 200px;
+    height: 200px;
+  }
+
+  &__name{
+    width: 200px;
+    color: white;
+    margin: 20px 0;
+    font-size: 18px;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+  }
+}

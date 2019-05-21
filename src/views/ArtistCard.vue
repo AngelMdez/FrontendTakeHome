@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper-artiscard">
+    <div class="wrapper-artiscard fadeInAnimated">
       <artist-header :artist="artist"></artist-header>
       <div>
         <div class="artistcard-info">

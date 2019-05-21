@@ -1,21 +1,22 @@
 <template>
-  <div v-if="parseArtists()[0]">
+  <div v-if="existsArtist">
     <div class="previews">
-      <main-result/>
-      <artist-preview :artists="parseArtists()"/>
+      <main-result class="slideInDownAnimated"/>
+      <artist-preview class="slideInDownAnimated" :artists="parseArtists()"/>
     </div>
     <div class="previews">
-      <tracks-preview :tracks="parseTracks()"/>
-      <albums-preview :albums="parseAlbums()"/>
+      <tracks-preview class="slideInDownAnimated" :tracks="parseTracks()"/>
+      <albums-preview class="slideInDownAnimated" :albums="parseAlbums()"/>
     </div>
   </div>
   <div class="nosearch" v-else>
-    <img src="@/assets/sad.png" class="nosearch__icon"/>
-    <!--<i class="material-icons md-48 md-light ">
+    <!--<img src="@/assets/sad.png" class="nosearch__icon"/>
+    &lt;!&ndash;<i class="material-icons md-48 md-light ">
       search
-    </i>-->
+    </i>&ndash;&gt;
     <h1 class="nosearch__title">Our monkeys weren't able to find your search :(</h1>
-    <h4 class="nosearch__subtitle">Check the spelling or try again with another word!</h4>
+    <h4 class="nosearch__subtitle">Check the spelling or try again with another word!</h4>-->
+    <not-found/>
   </div>
 </template>
 
@@ -27,10 +28,11 @@ import TracksPreview from '../components/previews/TracksPreview'
 import MainResult from '../components/previews/MainResult'
 import AlbumsPreview from '../components/previews/AlbumsPreview'
 import ArtistPreview from '../components/previews/ArtistsPreview'
+import NotFound from './NotFound'
 
 export default {
   name: 'SearchResults',
-  components: {AlbumsPreview, TracksPreview, MainResult, ArtistPreview},
+  components: {NotFound, AlbumsPreview, TracksPreview, MainResult, ArtistPreview},
   computed: {
     ...mapState('tracks', [
       'tracks'
@@ -42,7 +44,17 @@ export default {
       'artists'
     ])
   },
+  data: () => {
+    return {
+      suggestion: '',
+      query: '',
+      animated: false
+    }
+  },
   methods: {
+    existsArtist () {
+      return this.artists
+    },
     parseArtists () {
       return this.artists && this.artists.items
         ? Object.keys(this.artists.items)

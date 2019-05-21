@@ -1,0 +1,39 @@
+.notfound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.notfound__message {
+  color: white;
+  font-size: 25px;
+}
+.notfound-recommendations {
+  margin: 50px 0;
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: repeat(5, auto);
+  color: white;
+}
+
+.playlist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.playlist__img {
+  width: 200px;
+  height: 200px;
+}
+.playlist__name {
+  width: 200px;
+  color: white;
+  margin: 20px 0;
+  font-size: 18px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/*# sourceMappingURL=notfound.css.map */

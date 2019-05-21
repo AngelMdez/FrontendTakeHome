@@ -1,13 +1,12 @@
 .mainartist {
-  margin: 30px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.mainartist :hover {
+.mainartist:hover {
   cursor: pointer;
-  background-color: rgba(191, 191, 191, 0.5);
 }
 .mainartist > p {
   color: white;
@@ -19,6 +18,10 @@
   border-radius: 50%;
   height: 200px;
   width: 200px;
+  transition: transform 0.2s;
+}
+.mainartist__img:hover {
+  transform: scale(1.05);
 }
 
 .header {
@@ -44,8 +47,9 @@
   object-fit: cover;
 }
 .header__img > p {
-  margin-top: 10px;
+  margin-top: 12px;
   font-weight: bold;
+  text-align: center;
 }
 .header-info {
   display: flex;
@@ -69,6 +73,7 @@
   display: flex;
   align-items: center;
   height: 100px;
+  overflow-y: hidden;
 }
 .header-info__popularity :first-child {
   color: #1ED760;

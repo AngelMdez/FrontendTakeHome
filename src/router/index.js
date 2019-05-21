@@ -4,6 +4,7 @@ import SearchResults from '@/views/SearchResults'
 import NoRecentSearch from '@/components/NoRecentSearch'
 import Tracks from '@/views/Tracks'
 import ArtistCard from '@/views/ArtistCard'
+import NotFound from '@/views/NotFound'
 
 Vue.use(Router)
 
@@ -28,6 +29,15 @@ export default new Router({
       path: 'artistinfo/:query',
       name: 'artistinfo',
       component: ArtistCard
+    },
+    {
+      path: 'notfound',
+      name: 'notfound',
+      component: NotFound
+    },
+    {
+      path: '*',
+      redirect: '/'
     }
   ]
 })

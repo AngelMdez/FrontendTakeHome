@@ -36,7 +36,7 @@ export default {
       this.getArtistById(this.id)
       this.getTopTracks(this.id)
       this.getRelated(this.id)
-      this.$router.replace({name: 'artistinfo', params: {query: this.id}})
+      this.$router.push({name: 'artistinfo', params: {query: this.id}})
     }
   }
 }

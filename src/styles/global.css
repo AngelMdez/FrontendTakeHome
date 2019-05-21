@@ -1,9 +1,13 @@
-@import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
 * {
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -34,6 +38,34 @@
   color: white;
 }
 
+.slideInDownAnimated {
+  opacity: 0;
+  animation: slideInDown 0.5s ease both;
+}
+
+.fadeInAnimated {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(101%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 hr {
   width: 100%;
   margin: 10px 0;

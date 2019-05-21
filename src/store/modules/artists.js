@@ -19,22 +19,18 @@ const mutations = {
 
   SET_SINGLE_ARTIST (state, data) {
     state.artist = data
-    console.log(state.artist)
   },
 
   SET_TOP_TRACKS (state, data) {
     state.topTracks = data.tracks
-    console.log(state.topTracks)
   },
 
   SET_RELATED_ARTISTS (state, data) {
     state.related = data.artists
-    console.log(state.topTracks)
   },
 
   REQUEST_SET_ARTISTS (state, data) {
     state.artists = data.artists
-    console.log(state.artists)
   }
 }
 

@@ -1,7 +1,9 @@
 .nosearch {
   display: flex;
+  align-self: center;
   flex-direction: column;
   align-items: center;
+  height: 100%;
   justify-content: center;
   flex-grow: 2;
 }

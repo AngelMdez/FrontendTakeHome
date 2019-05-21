@@ -42,7 +42,6 @@ export default {
   },
   methods: {
     sliceTracks () {
-      console.log(this.tracks)
       return this.tracks && this.tracks.items
         ? Object.keys(this.tracks.items)
           .slice(0, 20)

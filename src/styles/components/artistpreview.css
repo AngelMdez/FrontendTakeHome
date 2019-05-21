@@ -7,20 +7,47 @@
 }
 
 .mainartist {
+  padding: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.mainartist > name {
+.mainartist__name {
   color: white;
   margin: 10px;
-  font-size: 18px;
+  font-size: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .mainartist__img {
   border-radius: 50%;
   height: 100px;
   width: 100px;
+  transition: transform 0.2s;
+}
+.mainartist__img:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.slideInDownAnimated {
+  opacity: 0;
+  animation: slideInDown 0.5s ease both;
+}
+
+.fadeInAnimated {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+.slideInDownAnimated-enter-active {
+  animation: slideInDown 0.5s ease both;
+}
+
+.slideInDownAnimated-leave-active {
+  animation: slideInDown 0.5s ease both;
 }
 
 /*# sourceMappingURL=artistpreview.css.map */

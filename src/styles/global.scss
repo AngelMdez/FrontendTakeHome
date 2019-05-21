@@ -1,10 +1,14 @@
-@import './setup/_typography.scss';
 
 *{
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+}
+
+a{
+  text-decoration: none;
+  color: white;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -22,6 +26,29 @@
 
 .material-icons.md-light { color: rgba(255, 255, 255, 1); }
 
+
+.slideInDownAnimated{
+  opacity: 0;
+  animation: slideInDown .5s ease both;
+}
+
+.fadeInAnimated {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(101%);
+    opacity: 0; }
+  to {transform: translateY(0);
+    opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
 
 hr{
   width: 100%;
