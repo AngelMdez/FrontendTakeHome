@@ -2,8 +2,8 @@
     <div class="wrapper-artiscard fadeInAnimated">
       <artist-header :artist="artist"></artist-header>
       <div>
-        <div class="artistcard-info">
-          <div class="artistcard-info-tracks" >
+        <section class="artistcard-info">
+          <article class="artistcard-info-tracks" >
             <h1 class="artistcard-info-tracks__title">Most popular songs</h1>
             <hr>
             <div class="artistcard-info-tracks__headers">
@@ -17,17 +17,17 @@
             <track-entry v-for="(track, index) in topTracks"
                          :key="index"
                          :title="track.name"
-                         :artist="track.artists[0].name"
+                         :artists="track.artists"
                          :album="track.album.name"
                          :duration="track.duration_ms"
                          :popularity="track.popularity"/>
-          </div>
-          <div class="artistcard-info__related">
+          </article>
+          <article class="artistcard-info__related">
             <h1 class="artistcard-info-tracks__title">Related artists</h1>
             <hr>
-            <artist-related  :related="related"/>
-          </div>
-        </div>
+            <artist-related aria-live="polite"  :related="related"/>
+          </article>
+        </section>
       </div>
     </div>
 </template>

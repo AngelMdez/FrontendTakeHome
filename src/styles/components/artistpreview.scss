@@ -2,8 +2,8 @@
 
   &-artists{
     display: grid;
-    grid-gap: 50px;
-    grid-template-columns: repeat(4, 150px);
+    grid-gap: 25px;
+    grid-template-columns: repeat(3, 250px);
     color: white;
     margin: 0;
   }

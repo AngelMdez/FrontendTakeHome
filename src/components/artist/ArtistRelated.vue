@@ -1,16 +1,21 @@
 <template>
-  <div class="relatedlist">
-    <div class="relatedlist-entry" v-for="(artist, index) in related.slice(0,5)"
+  <section class="relatedlist">
+    <article  v-for="(artist, index) in related.slice(0,5)"
          :key="index">
-      <img class="relatedlist-entry__img" :src="artist.images[0].url" />
-      <p class="relatedlist-entry__name">{{artist.name}}</p>
-    </div>
-  </div>
+      <artist
+        :id="artist.id"
+        :url="artist.images[0].url"
+        :name="artist.name"/>
+    </article>
+  </section>
 </template>
 
 <script>
+import Artist from '../Artist'
+
 export default {
   name: 'ArtistRelated',
+  components: {Artist},
   props: {
     related: {
       required: true

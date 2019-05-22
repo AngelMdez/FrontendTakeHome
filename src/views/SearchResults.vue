@@ -1,23 +1,17 @@
 <template>
-  <div v-if="existsArtist">
-    <div class="previews">
-      <main-result class="slideInDownAnimated"/>
-      <artist-preview class="slideInDownAnimated" :artists="parseArtists()"/>
-    </div>
-    <div class="previews">
-      <tracks-preview class="slideInDownAnimated" :tracks="parseTracks()"/>
-      <albums-preview class="slideInDownAnimated" :albums="parseAlbums()"/>
-    </div>
-  </div>
-  <div class="nosearch" v-else>
-    <!--<img src="@/assets/sad.png" class="nosearch__icon"/>
-    &lt;!&ndash;<i class="material-icons md-48 md-light ">
-      search
-    </i>&ndash;&gt;
-    <h1 class="nosearch__title">Our monkeys weren't able to find your search :(</h1>
-    <h4 class="nosearch__subtitle">Check the spelling or try again with another word!</h4>-->
+  <section v-if="existsArtist()" aria-live="polite" aria-label="Search results">
+    <article class="previews">
+      <main-result aria-label="main result" class="slideInDownAnimated"/>
+      <artist-preview aria-label="most popular artists results" class="slideInDownAnimated" :artists="parseArtists()"/>
+    </article>
+    <article class="previews">
+      <tracks-preview aria-label="most popular tracks results" class="slideInDownAnimated" :tracks="parseTracks()"/>
+      <albums-preview aria-label="most popular albums results" class="slideInDownAnimated" :albums="parseAlbums()"/>
+    </article>
+  </section>
+  <section class="nosearch" v-else>
     <not-found/>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -53,12 +47,12 @@ export default {
   },
   methods: {
     existsArtist () {
-      return this.artists
+      return this.artists && this.artists.items.length > 0
     },
     parseArtists () {
       return this.artists && this.artists.items
         ? Object.keys(this.artists.items)
-          .slice(1, 5)
+          .slice(1, 4)
           .map(key => ({...this.artists.items[key]}))
         : []
     },

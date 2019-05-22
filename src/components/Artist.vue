@@ -1,8 +1,7 @@
 <template>
-  <div class="mainartist" v-on:click="goTo()">
-    <p>Most popular artist</p>
-    <img class="mainartist__img" :src="url" />
-    <p class="mainartist__name">{{name}}</p>
+  <div class="relatedlist-entry" v-on:click="goTo(id)">
+    <img class="relatedlist-entry__img" :src="url" :alt='name'/>
+    <p class="relatedlist-entry__name">{{name}}</p>
   </div>
 </template>
 
@@ -32,11 +31,11 @@ export default {
       getRelated: 'artists/getRelatedArtists'
     }),
 
-    goTo () {
-      this.getArtistById(this.id)
-      this.getTopTracks(this.id)
-      this.getRelated(this.id)
-      this.$router.push({name: 'artistinfo', params: {query: this.id}})
+    goTo (id) {
+      this.getArtistById(id)
+      this.getTopTracks(id)
+      this.getRelated(id)
+      this.$router.push({name: 'artistinfo', params: {query: id}})
     }
   }
 }

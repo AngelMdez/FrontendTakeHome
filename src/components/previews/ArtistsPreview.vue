@@ -7,11 +7,11 @@
     </div>
     <hr>
     <div class="wrapper-artists">
-      <div class="mainartist" v-for="(artist, index) in artists"
-           :key="index"  v-on:click="goTo()">
-        <img class="mainartist__img" :src="artist.images[0].url" />
-        <p class="mainartist__name">{{artist.name}}</p>
-      </div>
+      <artist v-for="(artist, index) in artists"
+              :key="index"
+              :id="artist.id"
+              :url="artist.images[0].url"
+              :name="artist.name"/>
     </div>
   </div>
   </transition>
@@ -21,9 +21,11 @@
 import {
   mapActions
 } from 'vuex'
+import Artist from '../Artist'
 
 export default {
   name: 'ArtistPreview',
+  components: {Artist},
   props: {
     artists: {
       required: true
@@ -36,11 +38,11 @@ export default {
       getRelated: 'artists/getRelatedArtists'
     }),
 
-    goTo () {
-      this.getArtistById(this.id)
-      this.getTopTracks(this.id)
-      this.getRelated(this.id)
-      this.$router.replace({name: 'artistinfo', params: {query: this.id}})
+    goTo (id) {
+      this.getArtistById(id)
+      this.getTopTracks(id)
+      this.getRelated(id)
+      this.$router.replace({name: 'artistinfo', params: {query: id}})
     }
   }
 }

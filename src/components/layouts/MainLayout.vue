@@ -1,11 +1,11 @@
 <template>
   <div class="app-layout">
-    <div class="app-layout__header">
+    <header class="app-layout__header">
       <searchbox/>
-    </div>
-    <div class="app-layout-scroll">
+    </header>
+    <section class="app-layout-scroll">
       <router-view></router-view>
-    </div>
+    </section>
   </div>
 </template>
 

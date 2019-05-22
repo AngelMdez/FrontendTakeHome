@@ -2,7 +2,7 @@
   <div>
     <div class="table-entry">
       <p>{{title}}</p>
-      <p>{{artist}}</p>
+      <p>{{artists | getTrackArtists}}</p>
       <p>{{album}}</p>
       <p>{{duration | toDate}}</p>
       <p>{{popularity}}</p>
@@ -19,7 +19,7 @@ export default {
     title: {
       required: true
     },
-    artist: {
+    artists: {
       required: true
     },
     album: {
@@ -37,6 +37,13 @@ export default {
       var minutes = Math.floor(ms / 60000)
       var seconds = ((ms % 60000) / 1000).toFixed(0)
       return minutes + ':' + (seconds < 10 ? '0' : '') + seconds
+    },
+    getTrackArtists: function (artists) {
+      var result = artists[0].name
+      artists.slice(1).forEach(artist => {
+        result += ', ' + artist.name
+      })
+      return result
     }
   }
 }

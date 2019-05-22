@@ -1,19 +1,19 @@
 <template>
   <div class="tablewrapper">
-    <div class="table">
+    <div aria-live="polite" class="table">
       <h1>Showing songs for <strong>{{currentInput() | uppercase}}</strong></h1>
-      <div class="table-entry table-entry--title">
+      <section aria-label="table headers" class="table-entry table-entry--title">
         <p>Title</p>
         <p>Artist</p>
         <p>Album</p>
         <p>Duration</p>
         <p>Popularity</p>
-      </div>
+      </section>
       <hr>
       <track-entry v-for="(track, index) in sliceTracks()"
                    :key="index"
                    :title="track.name"
-                   :artist="track.artists[0].name"
+                   :artists="track.artists"
                    :album="track.album.name"
                    :duration="track.duration_ms"
                    :popularity="track.popularity"/>
@@ -41,6 +41,7 @@ export default {
     }
   },
   methods: {
+
     sliceTracks () {
       return this.tracks && this.tracks.items
         ? Object.keys(this.tracks.items)

@@ -1,7 +1,7 @@
 <template>
-  <div class="header">
+  <header class="header" v-if="artist">
     <div class="header__img">
-      <img :src="artist.images[0].url" />
+      <img :src="artist.images[0].url" :alt="artist.name" />
       <p>{{artist.name}}</p>
     </div>
     <div class="header-info">
@@ -14,7 +14,7 @@
         <div>{{artist.popularity}}</div>/<div>100</div>
       </div>
     </div>
-  </div>
+  </header>
 </template>
 
 <script>
