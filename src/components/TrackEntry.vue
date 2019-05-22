@@ -1,11 +1,17 @@
 <template>
   <div>
-    <div class="table-entry">
+    <div class="table-entry" v-if="!isMobile">
       <p>{{title}}</p>
       <p>{{artists | getTrackArtists}}</p>
       <p>{{album}}</p>
       <p>{{duration | toDate}}</p>
       <p>{{popularity}}</p>
+    </div>
+
+    <div class="table-entry" v-else>
+      <p>{{title}}</p>
+      <p>{{artists | getTrackArtists}}</p>
+      <p>{{album}}</p>
     </div>
     <hr>
   </div>
@@ -45,10 +51,15 @@ export default {
       })
       return result
     }
+  },
+  methods: {
+    isMobile () {
+      return window.innerWidth < 640
+    }
   }
 }
 </script>
 
 <style scoped lang="sass">
-  @import '../styles/components/trackentry.scss'
+  @import '../styles/components/table'
 </style>

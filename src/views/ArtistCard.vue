@@ -1,18 +1,23 @@
 <template>
-    <div class="wrapper-artiscard fadeInAnimated">
+    <div class="wrapper-artiscard fadeInAnimated" :key="artist">
       <artist-header :artist="artist"></artist-header>
       <div>
         <section class="artistcard-info">
           <article class="artistcard-info-tracks" >
             <h1 class="artistcard-info-tracks__title">Most popular songs</h1>
             <hr>
-            <div class="artistcard-info-tracks__headers">
+            <section class="artistcard-info-tracks__headers" v-if="!isMobile">
               <p>Title</p>
               <p>Artist</p>
               <p>Album</p>
               <p>Duration</p>
               <p>Popularity</p>
-            </div>
+            </section>
+            <section class="artistcard-info-tracks__headers" v-else>
+              <p>Title</p>
+              <p>Artist</p>
+              <p>Album</p>
+            </section>
             <hr>
             <track-entry v-for="(track, index) in topTracks"
                          :key="index"
@@ -49,6 +54,11 @@ export default {
       'topTracks',
       'related'
     ])
+  },
+  methods: {
+    isMobile () {
+      return window.innerWidth < 640
+    }
   }
 }
 </script>

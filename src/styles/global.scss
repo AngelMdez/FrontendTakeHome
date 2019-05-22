@@ -50,6 +50,23 @@ a{
   to {opacity: 1}
 }
 
+@keyframes fadeOut{
+  0%   {opacity: 1;}
+  70%  {opacity: 1;}
+  90% {opacity: 1;transform: translateY(0px);}
+  100% {opacity: 0;transform: translateY(-30px);}
+}
+
+@keyframes slideOutUp{
+  from {
+    transform: translateY(0);
+    opacity: 1; }
+  to {transform: translateY(101%);
+    opacity: 0; }
+}
+
+
+
 hr{
   width: 100%;
   margin: 10px 0;

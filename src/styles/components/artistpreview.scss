@@ -6,6 +6,10 @@
     grid-template-columns: repeat(3, 250px);
     color: white;
     margin: 0;
+
+    @media only screen and (max-width: 640px) {
+      grid-template-columns: repeat(2, 150px);
+    }
   }
 
 }
@@ -58,3 +62,5 @@
 .slideInDownAnimated-leave-active {
   animation: slideInDown .5s ease both;
 }
+
+

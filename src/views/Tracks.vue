@@ -1,14 +1,19 @@
 <template>
   <div class="tablewrapper">
-    <div aria-live="polite" class="table">
+    <div aria-live="polite" class="table" >
       <h1>Showing songs for <strong>{{currentInput() | uppercase}}</strong></h1>
-      <section aria-label="table headers" class="table-entry table-entry--title">
+      <div aria-label="table headers" class="table-entry table-entry--title" v-if="!isMobile()">
         <p>Title</p>
         <p>Artist</p>
         <p>Album</p>
         <p>Duration</p>
         <p>Popularity</p>
-      </section>
+      </div>
+      <div aria-label="table headers" class="table-entry table-entry--title" v-else>
+        <p>Title</p>
+        <p>Artist</p>
+        <p>Album</p>
+      </div>
       <hr>
       <track-entry v-for="(track, index) in sliceTracks()"
                    :key="index"
@@ -57,11 +62,14 @@ export default {
     },
     currentInput () {
       return localStorage.getItem('input')
+    },
+    isMobile () {
+      return window.innerWidth < 640
     }
   }
 }
 </script>
 
 <style scoped lang="sass">
-  @import '../styles/components/trackentry.scss'
+  @import '../styles/components/table'
 </style>

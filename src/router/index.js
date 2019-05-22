@@ -4,6 +4,7 @@ import SearchResults from '@/views/SearchResults'
 import NoRecentSearch from '@/components/NoRecentSearch'
 import Tracks from '@/views/Tracks'
 import ArtistCard from '@/views/ArtistCard'
+import Artists from '@/views/Artists'
 import NotFound from '@/views/NotFound'
 
 Vue.use(Router)
@@ -34,6 +35,11 @@ export default new Router({
       path: 'notfound',
       name: 'notfound',
       component: NotFound
+    },
+    {
+      path: 'artists',
+      name: 'artists',
+      component: Artists
     },
     {
       path: '*',

@@ -5,12 +5,22 @@
   justify-content: center;
   width: 100%;
 
+  @media only screen and (max-width: 640px) {
+    flex-direction: row;
+  }
+
   &-entry{
     width: 100%;
     padding: 10px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+
+    @media only screen and (max-width: 640px) {
+      justify-content: center;
+      padding: 0;
+
+    }
 
     &__img {
       border-radius: 50%;

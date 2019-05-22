@@ -1,6 +1,6 @@
 <template>
   <section class="relatedlist">
-    <article  v-for="(artist, index) in related.slice(0,5)"
+    <article  v-for="(artist, index) in sliceRelated()"
          :key="index">
       <artist
         :id="artist.id"
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Artist from '../Artist'
+import Artist from './Artist'
 
 export default {
   name: 'ArtistRelated',
@@ -19,6 +19,11 @@ export default {
   props: {
     related: {
       required: true
+    }
+  },
+  methods: {
+    sliceRelated () {
+      return window.innerWidth < 640 ? this.related.slice(0, 5) : this.related.slice(0, 3)
     }
   }
 }

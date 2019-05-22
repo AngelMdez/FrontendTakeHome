@@ -19,7 +19,7 @@ import {
   mapActions,
   mapState
 } from 'vuex'
-import Artist from '../Artist'
+import Artist from '../artist/Artist'
 
 export default {
   name: 'MainResult',

@@ -6,7 +6,6 @@
 
 .table {
   width: 75%;
-  overflow-y: scroll;
 
   & > h1{
     color: white;
@@ -22,6 +21,11 @@
     display: grid;
     grid-template-columns: 2fr 1fr 2fr 1fr 1fr;
     grid-gap: 10px;
+
+    @media only screen and (max-width: 640px) {
+      grid-template-columns: 2fr 1fr 2fr;
+
+    }
 
     &--title{
       text-transform: uppercase;
@@ -40,3 +44,16 @@
   }
 }
 
+
+
+.wrapper{
+
+  &-artists{
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: repeat(5, 250px);
+    color: white;
+    margin: 0;
+  }
+
+}

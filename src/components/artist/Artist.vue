@@ -1,5 +1,5 @@
 <template>
-  <div class="relatedlist-entry" v-on:click="goTo(id)">
+  <div class="relatedlist-entry" v-on:click="goTo(id)" v-if="url !== ''">
     <img class="relatedlist-entry__img" :src="url" :alt='name'/>
     <p class="relatedlist-entry__name">{{name}}</p>
   </div>
@@ -42,5 +42,5 @@ export default {
 </script>
 
 <style scoped lang="sass">
-  @import "../styles/components/artist.scss"
+  @import "../../styles/components/artist"
 </style>

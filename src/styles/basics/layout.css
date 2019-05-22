@@ -7,8 +7,13 @@
   flex-grow: 1;
   height: 100vh;
   width: 100%;
-  padding: 25px;
+  padding: 25px 25px 0 25px;
   background-color: #181818;
+}
+@media only screen and (max-width: 640px) {
+  .app-layout {
+    padding: 0;
+  }
 }
 .app-layout-scroll {
   margin-top: 10%;
@@ -18,6 +23,12 @@
 .app-layout__header {
   position: fixed;
   top: 0;
+  width: 100%;
+}
+@media only screen and (max-width: 640px) {
+  .app-layout__header {
+    position: relative;
+  }
 }
 
 /*# sourceMappingURL=layout.css.map */

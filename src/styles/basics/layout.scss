@@ -12,6 +12,10 @@
   //background: linear-gradient(180deg, rgba(51,51,51,0.85), rgba(28,28,28,0.95)),url(../../assets/spotifywallpaper.jpg) no-repeat center center fixed;
   background-color: #181818;
 
+  @media only screen and (max-width: 640px) {
+    padding: 0;
+  }
+
   &-scroll {
     margin-top: 10%;
     width: 100%;
@@ -21,6 +25,11 @@
   &__header{
     position: fixed;
     top: 0;
+    width: 100%;
+
+    @media only screen and (max-width: 640px) {
+      position: relative;
+    }
   }
 }
 

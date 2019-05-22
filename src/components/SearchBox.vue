@@ -1,14 +1,7 @@
 <template>
-  <div class="outer">
+  <div class="outer" @focusout="show = false">
     <img aria-label="Home" aria-live="off" src="@/assets/spotify.png" @click="reset()" alt="spotify home icon"/>
-    <!--<i class="material-icons md-36 md-light " @click="$router.go(-1)">
-      navigate_before
-    </i>
-    <i class="material-icons md-36 md-light" @click="$router.go(1)">
-      navigate_next
-    </i>-->
-    <section class="search"
-    @blur="show = false">
+    <section class="search">
       <div class="search-inner">
         <i class="material-icons md-24 search-inner__icon">
           search

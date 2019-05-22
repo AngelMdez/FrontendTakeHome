@@ -1,12 +1,14 @@
 <template>
   <section v-if="existsArtist()" aria-live="polite" aria-label="Search results">
     <article class="previews">
-      <main-result aria-label="main result" class="slideInDownAnimated"/>
-      <artist-preview aria-label="most popular artists results" class="slideInDownAnimated" :artists="parseArtists()"/>
+      <transition name="fade">
+        <main-result class="fadeInAnimated"  aria-label="main result"/>
+      </transition>
+        <artist-preview class="fadeInAnimated"  aria-label="most popular artists results" :artists="parseArtists()" :key="artists.items[0].name"/>
     </article>
     <article class="previews">
-      <tracks-preview aria-label="most popular tracks results" class="slideInDownAnimated" :tracks="parseTracks()"/>
-      <albums-preview aria-label="most popular albums results" class="slideInDownAnimated" :albums="parseAlbums()"/>
+        <tracks-preview class="fadeInAnimated"  aria-label="most popular tracks results" :tracks="parseTracks()" :key="tracks.items[0].name"/>
+        <albums-preview class="fadeInAnimated"  aria-label="most popular albums results"  :albums="parseAlbums()" :key="albums.items[0].name"/>
     </article>
   </section>
   <section class="nosearch" v-else>

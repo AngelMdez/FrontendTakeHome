@@ -1,9 +1,8 @@
 <template >
-  <transition name="slideInDownAnimated">
   <div class="wrapper" v-if="artists[0]">
     <div class="wrapper-title">
       <h3>Artists</h3>
-      <p>Show more...</p>
+      <p v-on:click="goTo()">Show more...</p>
     </div>
     <hr>
     <div class="wrapper-artists">
@@ -14,14 +13,13 @@
               :name="artist.name"/>
     </div>
   </div>
-  </transition>
 </template>
 
 <script>
 import {
   mapActions
 } from 'vuex'
-import Artist from '../Artist'
+import Artist from '../artist/Artist'
 
 export default {
   name: 'ArtistPreview',
@@ -38,11 +36,8 @@ export default {
       getRelated: 'artists/getRelatedArtists'
     }),
 
-    goTo (id) {
-      this.getArtistById(id)
-      this.getTopTracks(id)
-      this.getRelated(id)
-      this.$router.replace({name: 'artistinfo', params: {query: id}})
+    goTo () {
+      this.$router.replace({name: 'artists'})
     }
   }
 }
