@@ -14,9 +14,9 @@ npm install
 
 # serve with hot reload at localhost:8080
 npm start
+```
 
-
-![home](https://raw.githubusercontent.com/AngelMdez/FrontendTakeHome/master/static/readme/home.png)
+![home](static/readme/home.png?raw=true)
 
 ![search](https://raw.githubusercontent.com/AngelMdez/FrontendTakeHome/master/static/readme/search.png)
 
