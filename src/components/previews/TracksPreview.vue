@@ -40,5 +40,5 @@ export default {
 </script>
 
 <style scoped lang="sass">
-  @import "../../styles/components/trackspreview"
+  @import "../../styles/components/previews"
 </style>

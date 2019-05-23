@@ -1,5 +1,5 @@
 <template>
-    <section class="notfound" v-if="playlists.items > 0">
+    <section class="notfound" >
       <p class="notfound__message">Ahhhhhh! We weren't able to find your search. Take a look at our BEST PLAYLISTS</p>
       <div aria-live="polite" class="notfound-recommendations slideInDownAnimated">
         <recommendation v-for="(playlist, index) in playlists.items"
@@ -32,7 +32,10 @@ export default {
     ...mapActions({
       getRecommendations: 'playlists/getPlaylists',
       getMorePlaylists: 'playlists/getMorePlaylists'
-    })
+    }),
+    existPlaylist () {
+      return this.playlists && this.playlists.items > 0
+    }
   },
   mounted () {
     this.getRecommendations()

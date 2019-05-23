@@ -146,13 +146,13 @@
 @media only screen and (max-width: 640px) {
   .artistcard-info {
     flex-direction: column;
-    margin: 0 25px;
+    padding: 0 50px;
     align-items: center;
   }
 }
 .artistcard-info-tracks {
   padding: 25px;
-  width: 80%;
+  width: 75%;
 }
 @media only screen and (max-width: 640px) {
   .artistcard-info-tracks {
@@ -162,19 +162,22 @@
 }
 .artistcard-info-tracks__title {
   color: white;
+  margin: 10px 0;
 }
 .artistcard-info-tracks__headers {
   display: grid;
-  grid-template-columns: 2fr 1fr 2fr 1fr 1fr;
+  grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
   grid-gap: 10px;
   text-transform: uppercase;
-  opacity: 0.55;
+  opacity: 0.45;
   letter-spacing: 2px;
   color: white;
+  margin: 10px 0;
+  font-weight: bold;
 }
 @media only screen and (max-width: 640px) {
   .artistcard-info-tracks__headers {
-    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-columns: 2fr 2fr 1fr;
   }
 }
 .artistcard-info__related {
@@ -183,7 +186,7 @@
 }
 @media only screen and (max-width: 640px) {
   .artistcard-info__related {
-    width: 70%;
+    width: 80%;
     padding: 25px;
   }
 }
@@ -201,6 +204,7 @@
 @media only screen and (max-width: 640px) {
   .relatedlist {
     flex-direction: row;
+    margin: 20px 0;
   }
 }
 .relatedlist-entry {
@@ -212,10 +216,11 @@
 }
 @media only screen and (max-width: 640px) {
   .relatedlist-entry {
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     padding: 0;
-    margin: 0 10px;
+    margin-right: 20px;
   }
 }
 .relatedlist-entry__img {
@@ -246,9 +251,9 @@
   .relatedlist-entry__name {
     margin: 0;
     margin-top: 10px;
-    width: 100%;
+    width: 75px;
     text-align: center;
-    align-self: flex-start;
+    align-self: center;
   }
 }
 

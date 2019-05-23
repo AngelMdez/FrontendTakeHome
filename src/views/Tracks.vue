@@ -15,13 +15,16 @@
         <p>Album</p>
       </div>
       <hr>
-      <track-entry v-for="(track, index) in sliceTracks()"
+      <a :href="track.external_urls.spotify" target="_blank"  v-for="(track, index) in sliceTracks()"
+         :key="index">
+      <track-entry
                    :key="index"
                    :title="track.name"
                    :artists="track.artists"
                    :album="track.album.name"
                    :duration="track.duration_ms"
                    :popularity="track.popularity"/>
+      </a>
     </div>
   </div>
 </template>

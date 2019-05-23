@@ -1,6 +1,6 @@
 <template>
   <section class="notfound">
-    <p class="notfound__message">HEY! Welcome. You can enjoy the <strong>Current new releases</strong> or search for anything you want!</p>
+    <p class="notfound__message">HEY! Welcome. Check out the <strong>new releases</strong> or search for anything you want!</p>
     <div aria-live="polite" class="notfound-recommendations slideInDownAnimated">
       <recommendation v-for="(playlist, index) in newreleases.items"
                       :key="index"
@@ -40,10 +40,6 @@ export default {
   },
   created: function () {
     this.getNewReleases()
-  },
-  mounted: function () {
-    /* document.getElementById('test').addEventListener('scroll', () => {
-    }) */
   }
 }
 </script>

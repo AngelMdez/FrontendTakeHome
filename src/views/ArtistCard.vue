@@ -6,7 +6,7 @@
           <article class="artistcard-info-tracks" >
             <h1 class="artistcard-info-tracks__title">Most popular songs</h1>
             <hr>
-            <section class="artistcard-info-tracks__headers" v-if="!isMobile">
+            <section class="artistcard-info-tracks__headers" v-if="!isMobile()">
               <p>Title</p>
               <p>Artist</p>
               <p>Album</p>
@@ -19,13 +19,17 @@
               <p>Album</p>
             </section>
             <hr>
-            <track-entry v-for="(track, index) in topTracks"
+            <a :href="track.external_urls.spotify" target="_blank" v-for="(track, index) in topTracks"
+               :key="index">
+            <track-entry
                          :key="index"
+                         :url="track.external_urls.spotify"
                          :title="track.name"
                          :artists="track.artists"
                          :album="track.album.name"
                          :duration="track.duration_ms"
                          :popularity="track.popularity"/>
+            </a>
           </article>
           <article class="artistcard-info__related">
             <h1 class="artistcard-info-tracks__title">Related artists</h1>

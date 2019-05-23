@@ -23,12 +23,12 @@ export default {
   },
   methods: {
     sliceRelated () {
-      return window.innerWidth < 640 ? this.related.slice(0, 5) : this.related.slice(0, 3)
+      return window.innerWidth < 640 ? this.related.slice(0, 3) : this.related.slice(0, 5)
     }
   }
 }
 </script>
 
 <style scoped lang="sass">
-  @import '../../styles/components/relatedartists'
+  @import '../../styles/components/artist'
 </style>

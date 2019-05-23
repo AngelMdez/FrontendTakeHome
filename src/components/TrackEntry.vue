@@ -36,6 +36,9 @@ export default {
     },
     popularity: {
       required: true
+    },
+    url: {
+      required: false
     }
   },
   filters: {

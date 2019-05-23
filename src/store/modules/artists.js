@@ -40,6 +40,9 @@ const mutations = {
 
   REQUEST_SET_ARTISTS (state, data) {
     state.artists = data.artists
+  },
+  RESET_ARTISTS (state) {
+    state.artists = ''
   }
 }
 
@@ -70,7 +73,9 @@ const actions = {
   requestFinished ({commit}) {
     commit('REQUEST_FINISHED')
   },
-
+  resetArtists ({commit}) {
+    commit('RESET_ARTISTS')
+  },
   async getArtists ({commit, dispatch}, query) {
     dispatch('requestSetSearchQuery', query)
     dispatch('requestLoading')

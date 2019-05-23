@@ -57,6 +57,7 @@
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(2, 100px);
+  overflow: hidden;
 }
 @media only screen and (max-width: 640px) {
   .trackspreview-entry {
@@ -68,6 +69,10 @@
   width: 100px;
   grid-column: 1;
   grid-row: 2;
+  transition: transform 0.2s;
+}
+.trackspreview-entry__img:hover {
+  transform: scale(1.05);
 }
 @media only screen and (max-width: 640px) {
   .trackspreview-entry__img {
@@ -109,4 +114,4 @@
   text-overflow: ellipsis;
 }
 
-/*# sourceMappingURL=trackspreview.css.map */
+/*# sourceMappingURL=previews.css.map */

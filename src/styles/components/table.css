@@ -2,10 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 20px 0;
 }
 
 .table {
-  width: 75%;
+  width: 85%;
 }
 .table > h1 {
   color: white;
@@ -14,16 +15,23 @@
 }
 .table > h1 > strong {
   opacity: 1;
+  color: #1ED760;
 }
 .table-entry {
   display: grid;
-  grid-template-columns: 2fr 1fr 2fr 1fr 1fr;
+  grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
   grid-gap: 10px;
+  padding: 10px 0;
+  color: white;
 }
 @media only screen and (max-width: 640px) {
   .table-entry {
-    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-columns: 2fr 2fr 1fr;
   }
+}
+.table-entry:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 .table-entry--title {
   text-transform: uppercase;
@@ -42,9 +50,16 @@
 .wrapper-artists {
   display: grid;
   grid-gap: 25px;
-  grid-template-columns: repeat(5, 250px);
+  grid-template-columns: repeat(5, calc(85%/5));
+  align-items: center;
   color: white;
-  margin: 0;
+  margin: 20px 0;
+}
+@media only screen and (max-width: 640px) {
+  .wrapper-artists {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
 }
 
 /*# sourceMappingURL=table.css.map */

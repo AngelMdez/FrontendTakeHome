@@ -10,13 +10,6 @@ a {
   color: white;
 }
 
-/*::-webkit-scrollbar-thumb {
-  background-color: hsla(0,0%,100%,.3);
-}
-
-::-webkit-scrollbar {
-  width: 16px;
-}*/
 .material-icons.md-18 {
   font-size: 18px;
 }
@@ -39,7 +32,7 @@ a {
 
 .slideInDownAnimated {
   opacity: 0;
-  animation: slideInDown 0.5s ease both;
+  animation: slideInDown 0.75s ease both;
 }
 
 .fadeInAnimated {
@@ -93,7 +86,6 @@ a {
 }
 hr {
   width: 100%;
-  margin: 10px 0;
   opacity: 0.25;
 }
 

@@ -8,12 +8,31 @@
   color: white;
   font-size: 25px;
 }
+.notfound__message > strong {
+  color: #1ED760;
+}
+@media only screen and (max-width: 640px) {
+  .notfound__message {
+    font-size: 15px;
+    text-align: center;
+    margin: 0 25px;
+  }
+}
 .notfound-recommendations {
   margin: 50px 0;
   display: grid;
   grid-gap: 50px;
   grid-template-columns: repeat(5, auto);
   color: white;
+  z-index: 2;
+}
+@media only screen and (max-width: 640px) {
+  .notfound-recommendations {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 25px;
+    grid-gap: 25px;
+    margin: 25px 0;
+  }
 }
 
 .playlist {
@@ -25,15 +44,31 @@
 .playlist__img {
   width: 200px;
   height: 200px;
+  transition: transform 0.2s;
+}
+.playlist__img:hover {
+  transform: scale(1.05);
+}
+@media only screen and (max-width: 640px) {
+  .playlist__img {
+    width: 100px;
+    height: 100px;
+  }
 }
 .playlist__name {
-  width: 200px;
+  max-width: 200px;
   color: white;
   margin: 20px 0;
   font-size: 18px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+@media only screen and (max-width: 640px) {
+  .playlist__name {
+    font-size: 13px;
+    max-width: 100px;
+  }
 }
 
 /*# sourceMappingURL=notfound.css.map */

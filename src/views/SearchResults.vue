@@ -9,9 +9,6 @@
         <albums-preview class="fadeInAnimated"  aria-label="most popular albums results"  :albums="parseAlbums()" :key="albums.items[0].name"/>
     </article>
   </section>
-  <section class="nosearch" v-else>
-    <not-found/>
-  </section>
 </template>
 
 <script>
@@ -38,6 +35,13 @@ export default {
       'artists',
       'artistLoading'
     ])
+  },
+  watch: {
+    artists: function (newvalue, oldvalue) {
+      if (newvalue.items.length === 0) {
+        this.$router.push({name: 'notfound'})
+      }
+    }
   },
   data: () => {
     return {
@@ -78,5 +82,5 @@ export default {
 
 <style scoped lang="sass">
   @import '../styles/components/searchresults.scss'
-  @import '../styles/components/norecentsearch.scss'
+  // @import '../styles/components/norecentsearch.scss'
 </style>

@@ -59,6 +59,7 @@ export default {
   methods: {
     ...mapActions({
       getArtists: 'artists/getArtists',
+      resetArtists: 'artists/resetArtists',
       getTracks: 'tracks/getTracks',
       getAlbums: 'albums/getAlbums'
     }),
@@ -88,28 +89,18 @@ export default {
         : []
     },
     onKeyUp (value) {
-      /* const {
-        value
-      } = e.target */
-
       clearTimeout(timeout)
       timeout = setTimeout(function () {
         if (value !== '') {
-          // this.store(value)
           this.getArtists(value)
           this.getTracks(value)
           this.getAlbums(value)
           localStorage.setItem('input', value)
 
           this.$router.push({name: 'search', params: {query: value}})
-          /* if (this.artists && this.artists.items) {
-            // this.$router.push({name: 'search', params: {query: value}})
-          } /!* else {
-            this.$router.push({name: 'notfound'})
-          } *!/ */
         } else {
           this.suggestion = ''
-          this.artist = ''
+          this.resetArtists()
           this.$router.push({name: 'main'})
         }
       }.bind(this), 250)
