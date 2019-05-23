@@ -1,4 +1,4 @@
-
+@import '../setup/_variables.scss';
 
 .notfound{
   display: flex;
@@ -9,6 +9,15 @@
   &__message{
     color: white;
     font-size: 25px;
+
+    & > strong {
+      color: $spotifygreen
+    }
+
+    @media only screen and (max-width: 640px) {
+      font-size: 15px;
+      text-align: center;
+    }
   }
   &-recommendations{
     margin: 50px 0;
@@ -16,6 +25,14 @@
     grid-gap: 50px;
     grid-template-columns: repeat(5, auto);
     color: white;
+    z-index: 2;
+
+    @media only screen and (max-width: 640px) {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 25px;
+      grid-gap: 25px;
+      margin: 25px 0;
+    }
   }
 }
 
@@ -29,15 +46,31 @@
   &__img{
     width: 200px;
     height: 200px;
+    transition: transform .2s;
+
+    &:hover{
+      transform: scale(1.05);
+    }
+
+    @media only screen and (max-width: 640px) {
+      width: 100px;
+      height: 100px;
+    }
   }
 
   &__name{
-    width: 200px;
+    max-width: 200px;
     color: white;
     margin: 20px 0;
     font-size: 18px;
     overflow: hidden;
     white-space:nowrap;
     text-overflow:ellipsis;
+
+    @media only screen and (max-width: 640px) {
+      font-size: 13px;
+      max-width: 100px;;
+    }
+
   }
 }

@@ -1,7 +1,10 @@
 import singlerequest from '../singlerequest'
 
 export default {
-  getPlaylists () {
-    return singlerequest.get(`browse/featured-playlists?country=${navigator.language.slice(3, 5)}&locale=${navigator.language}&limit=10`)
+  getPlaylists (offset) {
+    return singlerequest.get(`browse/featured-playlists?country=${navigator.language.slice(3, 5)}&locale=${navigator.language}&limit=10${offset ? '&offset=' + offset : ''}`)
+  },
+  getNewReleases () {
+    return singlerequest.get(`browse/new-releases?country=${navigator.language.slice(3, 5)}&limit=10`)
   }
 }

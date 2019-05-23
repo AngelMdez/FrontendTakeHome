@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="table-entry" v-if="!isMobile">
+    <div class="table-entry" v-if="!isMobile()">
       <p>{{title}}</p>
       <p>{{artists | getTrackArtists}}</p>
       <p>{{album}}</p>

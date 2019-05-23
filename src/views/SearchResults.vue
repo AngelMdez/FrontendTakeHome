@@ -1,10 +1,8 @@
 <template>
-  <section v-if="existsArtist()" aria-live="polite" aria-label="Search results">
+  <section aria-live="polite" aria-label="Search results" v-if="existsArtist()">
     <article class="previews">
-      <transition name="fade">
-        <main-result class="fadeInAnimated"  aria-label="main result"/>
-      </transition>
-        <artist-preview class="fadeInAnimated"  aria-label="most popular artists results" :artists="parseArtists()" :key="artists.items[0].name"/>
+        <main-result class="fadeInAnimated"  aria-label="main result" :key="artists.items[0].name"/>
+        <artist-preview class="fadeInAnimated"  aria-label="most popular artists results" :artists="parseArtists()" :key="artists.items[1].name"/>
     </article>
     <article class="previews">
         <tracks-preview class="fadeInAnimated"  aria-label="most popular tracks results" :tracks="parseTracks()" :key="tracks.items[0].name"/>
@@ -37,7 +35,8 @@ export default {
       'albums'
     ]),
     ...mapState('artists', [
-      'artists'
+      'artists',
+      'artistLoading'
     ])
   },
   data: () => {

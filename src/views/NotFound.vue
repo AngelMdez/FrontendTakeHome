@@ -1,5 +1,5 @@
 <template>
-    <section class="notfound">
+    <section class="notfound" v-if="playlists.items > 0">
       <p class="notfound__message">Ahhhhhh! We weren't able to find your search. Take a look at our BEST PLAYLISTS</p>
       <div aria-live="polite" class="notfound-recommendations slideInDownAnimated">
         <recommendation v-for="(playlist, index) in playlists.items"
@@ -17,6 +17,7 @@ import {
   mapState
 } from 'vuex'
 import Recommendation from '../components/Recommendation'
+import {getMore} from '@/mixins/getMore'
 
 export default {
   name: 'NotFound',
@@ -26,9 +27,11 @@ export default {
       'playlists'
     ])
   },
+  mixins: [getMore],
   methods: {
     ...mapActions({
-      getRecommendations: 'playlists/getPlaylists'
+      getRecommendations: 'playlists/getPlaylists',
+      getMorePlaylists: 'playlists/getMorePlaylists'
     })
   },
   mounted () {

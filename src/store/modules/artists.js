@@ -6,7 +6,8 @@ const state = {
   artists: '',
   artist: '',
   topTracks: '',
-  related: ''
+  related: '',
+  artistLoading: false
 }
 
 const getters = {}
@@ -19,6 +20,14 @@ const mutations = {
 
   SET_SINGLE_ARTIST (state, data) {
     state.artist = data
+  },
+
+  REQUEST_LOADING (state) {
+    state.artistLoading = true
+  },
+
+  REQUEST_FINISHED (state) {
+    state.artistLoading = false
   },
 
   SET_TOP_TRACKS (state, data) {
@@ -55,14 +64,22 @@ const actions = {
   setRelatedArtists ({commit}, data) {
     commit('SET_RELATED_ARTISTS', data)
   },
+  requestLoading ({commit}) {
+    commit('REQUEST_LOADING')
+  },
+  requestFinished ({commit}) {
+    commit('REQUEST_FINISHED')
+  },
 
   async getArtists ({commit, dispatch}, query) {
     dispatch('requestSetSearchQuery', query)
+    dispatch('requestLoading')
     // console.log(query)
     try {
       const response = await controllers.artists.getArtist(query)
       // console.log(response.data)
       dispatch('requestSetArtists', response.data)
+      dispatch('requestFinished')
     } catch (e) {
       console.log(e)
     }

@@ -4,14 +4,14 @@
       <searchbox/>
     </header>
     <section class="app-layout-scroll">
-      <router-view></router-view>
+      <router-view></router-view >
     </section>
   </div>
 </template>
 
 <script>
 import searchbox from '../SearchBox'
-import NoRecentSearch from '../NoRecentSearch'
+import NoRecentSearch from '../../views/NoRecentSearch'
 
 export default {
   name: 'AppLayout',

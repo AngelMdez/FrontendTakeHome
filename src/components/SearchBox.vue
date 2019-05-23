@@ -1,5 +1,5 @@
 <template>
-  <div class="outer" @focusout="show = false">
+  <div class="outer">
     <img aria-label="Home" aria-live="off" src="@/assets/spotify.png" @click="reset()" alt="spotify home icon"/>
     <section class="search">
       <div class="search-inner">
@@ -12,14 +12,15 @@
           placeholder="What are you looking for?"
           v-model="query"
           @focus="showRelated()"
+          @focusout="focusOut()"
           />
         <input
           class="search-inner__input--suggestion"
           type="search"
           v-bind:value='suggestion'/>
       </div>
-      <section class="search-related" aria-live="polite">
-        <article class="search-related__option" v-if="show && suggestion !== '' " v-for="(artist, index) in getRelated()" :key="index" @click="setInputQuery(artist.name)"  >
+      <section class="search-related" aria-live="polite"  v-if="show && suggestion !== '' "  >
+        <article class="search-related__option"  v-for="(artist, index) in getRelated()" :key="index" @mousedown="setInputQuery(artist.name)"  >
           <p > {{artist.name}}</p>
         </article>
       </section>
@@ -51,8 +52,8 @@ export default {
   },
   watch: {
     query: function (newQuery, oldQuery) {
-      this.generateSuggestion(newQuery)
       this.onKeyUp(newQuery)
+      this.generateSuggestion(newQuery)
     }
   },
   methods: {
@@ -62,6 +63,9 @@ export default {
       getAlbums: 'albums/getAlbums'
     }),
 
+    focusOut () {
+      this.show = false
+    },
     reset () {
       this.$router.push({name: 'main'})
       this.query = ''
